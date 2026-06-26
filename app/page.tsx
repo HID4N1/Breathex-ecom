@@ -1,6 +1,5 @@
 import { BenefitsSection } from "@/sections/benefits-section";
 import { ComparisonSection } from "@/sections/comparison-section";
-import { DailyLifeSection } from "@/sections/daily-life-section";
 import { FaqSection } from "@/sections/faq-section";
 import { FinalCtaSection } from "@/sections/final-cta-section";
 import { Footer } from "@/sections/footer";
@@ -23,7 +22,6 @@ export default function Home() {
       <WhyBreathingSection />
       <ScienceSection />
       <BenefitsSection />
-      <DailyLifeSection />
       <ComparisonSection />
       <PackSection />
       <StoriesSection />

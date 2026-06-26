@@ -37,7 +37,7 @@ export function HeroSection() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-top"
+        className="object-cover object-[60%_top]"
       />
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_72%,rgba(37,216,255,0.38)_0%,rgba(37,216,255,0.12)_22%,transparent_46%),radial-gradient(circle_at_24%_48%,rgba(2,11,31,0.12)_0%,rgba(2,11,31,0.55)_38%,transparent_64%),radial-gradient(circle_at_76%_46%,rgba(2,11,31,0.1)_0%,rgba(2,11,31,0.52)_36%,transparent_64%),linear-gradient(90deg,rgba(2,11,31,0.46)_0%,rgba(2,11,31,0.08)_30%,rgba(2,11,31,0.06)_70%,rgba(2,11,31,0.48)_100%),linear-gradient(180deg,rgba(2,11,31,0.58)_0%,rgba(2,11,31,0.08)_42%,rgba(2,11,31,0.62)_100%)]" />
