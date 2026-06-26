@@ -6,6 +6,7 @@ import { Footer } from "@/sections/footer";
 import { HeroSection } from "@/sections/hero-section";
 import { OrderSection } from "@/sections/order-section";
 import { PackSection } from "@/sections/pack-section";
+import { ProductSection } from "@/sections/product-section";
 import { ScienceSection } from "@/sections/science-section";
 import { StoriesSection } from "@/sections/stories-section";
 import { TrustBar } from "@/sections/trust-bar";
@@ -23,6 +24,7 @@ export default function Home() {
       <ScienceSection />
       <BenefitsSection />
       <ComparisonSection />
+      <ProductSection />
       <PackSection />
       <StoriesSection />
       <FaqSection />
