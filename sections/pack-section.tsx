@@ -1,148 +1,7 @@
 import Image from "next/image";
-import {
-  ArrowRight,
-  Check,
-  CreditCard,
-  MessageCircle,
-  ShieldCheck,
-  Truck
-} from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "@/components/reveal";
-
-const packs = [
-  {
-    title: "Pack Duo",
-    description: "Le meilleur équilibre entre sommeil et performance.",
-    price: "300 DH",
-    cta: "Commander maintenant",
-    accent: "#25D8FF",
-    glowClass: "bg-[#25D8FF]/36",
-    borderHover: "hover:border-[#25D8FF]/55",
-    shadowHover: "hover:shadow-[0_30px_90px_rgba(37,216,255,0.18)]",
-    buttonClass:
-      "from-[#2563EB] to-[#25D8FF] shadow-[0_16px_42px_rgba(37,216,255,0.24)] hover:shadow-[0_20px_54px_rgba(37,216,255,0.38)]",
-    includes: [
-      "1 boîte CLEAR (26)",
-      "1 boîte TAN (26)",
-      "Livraison incluse"
-    ],
-    products: [
-      {
-        image: "/images/breathe-right-extra-strength-clear-26.jpg",
-        alt: "Breatheex Clear 26 box",
-        className: "left-[18%] top-[28px] h-[210px] w-[145px] -rotate-6"
-      },
-      {
-        image: "/images/breathe-right-extra-strength-tan-26.jpg",
-        alt: "Breatheex Tan 26 box",
-        className: "right-[18%] top-[48px] h-[210px] w-[145px] rotate-6"
-      }
-    ]
-  },
-  {
-    title: "Pack Sommeil",
-    description:
-      "Pour améliorer votre sommeil et réduire les ronflements chaque nuit.",
-    price: "349 DH",
-    cta: "Commander",
-    accent: "#25D8FF",
-    glowClass: "bg-[#25D8FF]/34",
-    borderHover: "hover:border-[#25D8FF]/55",
-    shadowHover: "hover:shadow-[0_30px_90px_rgba(37,216,255,0.16)]",
-    buttonClass:
-      "from-[#0EA5E9] to-[#25D8FF] shadow-[0_16px_42px_rgba(37,216,255,0.22)] hover:shadow-[0_20px_54px_rgba(37,216,255,0.34)]",
-    includes: [
-      "2 boîtes CLEAR (30)",
-      "Livraison incluse",
-      "Confort quotidien"
-    ],
-    products: [
-      {
-        image: "/images/breathe-right-clear-small-medium-30.jpg",
-        alt: "Breatheex Clear 30 box",
-        className: "left-[20%] top-[36px] h-[212px] w-[148px] -rotate-5"
-      },
-      {
-        image: "/images/breathe-right-clear-small-medium-30.jpg",
-        alt: "Breatheex Clear 30 box",
-        className: "right-[20%] top-[52px] h-[212px] w-[148px] rotate-5"
-      }
-    ]
-  },
-  {
-    title: "Pack Performance",
-    description:
-      "Conçu pour le sport, les entraînements et les activités intensives.",
-    price: "349 DH",
-    cta: "Commander",
-    accent: "#FF7A45",
-    glowClass: "bg-[#FF7A45]/34",
-    borderHover: "hover:border-[#FF7A45]/55",
-    shadowHover: "hover:shadow-[0_30px_90px_rgba(255,122,69,0.16)]",
-    buttonClass:
-      "from-[#FF5A3D] to-[#FF9B55] shadow-[0_16px_42px_rgba(255,122,69,0.22)] hover:shadow-[0_20px_54px_rgba(255,122,69,0.34)]",
-    includes: [
-      "2 boîtes TAN (30)",
-      "Livraison incluse",
-      "Maintien renforcé"
-    ],
-    products: [
-      {
-        image: "/images/breathe-right-tan-large-30.jpg",
-        alt: "Breatheex Tan 30 box",
-        className: "left-[20%] top-[36px] h-[212px] w-[148px] -rotate-5"
-      },
-      {
-        image: "/images/breathe-right-tan-large-30.jpg",
-        alt: "Breatheex Tan 30 box",
-        className: "right-[20%] top-[52px] h-[212px] w-[148px] rotate-5"
-      }
-    ]
-  },
-  {
-    title: "Pack Annuel",
-    description:
-      "Une année complète de respiration optimale pour toute la famille.",
-    price: "699 DH",
-    cta: "Commander",
-    accent: "#D97706",
-    glowClass: "bg-[#FACC15]/34",
-    borderHover: "hover:border-[#FACC15]/70",
-    shadowHover: "hover:shadow-[0_30px_90px_rgba(217,119,6,0.16)]",
-    buttonClass:
-      "from-[#D97706] via-[#F59E0B] to-[#FACC15] shadow-[0_16px_42px_rgba(217,119,6,0.22)] hover:shadow-[0_20px_54px_rgba(217,119,6,0.34)]",
-    includes: ["4 boîtes (44)", "CLEAR + TAN", "Livraison incluse"],
-    products: [
-      {
-        image: "/images/breathe-right-extra-strength-clear-44.jpg",
-        alt: "Breatheex Clear 44 box",
-        className: "left-[11%] top-[60px] h-[188px] w-[132px] -rotate-8"
-      },
-      {
-        image: "/images/breathe-right-extra-strength-tan-44.jpg",
-        alt: "Breatheex Tan 44 box",
-        className: "right-[11%] top-[60px] h-[188px] w-[132px] rotate-8"
-      },
-      {
-        image: "/images/breathe-right-extra-strength-clear-44.jpg",
-        alt: "Breatheex Clear 44 box",
-        className: "left-[25%] top-[28px] h-[210px] w-[148px] -rotate-3"
-      },
-      {
-        image: "/images/breathe-right-extra-strength-tan-44.jpg",
-        alt: "Breatheex Tan 44 box",
-        className: "right-[25%] top-[34px] h-[210px] w-[148px] rotate-3"
-      }
-    ]
-  }
-];
-
-const trustItems = [
-  { label: "Livraison incluse", icon: Truck },
-  { label: "Paiement à la livraison", icon: CreditCard },
-  { label: "Produit officiel", icon: ShieldCheck },
-  { label: "Support WhatsApp", icon: MessageCircle }
-];
+import { commerceTrustItems, curatedPacks } from "@/data/commerce";
 
 export function PackSection() {
   return (
@@ -168,8 +27,12 @@ export function PackSection() {
         </Reveal>
 
         <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {packs.map((pack, index) => (
-            <Reveal key={pack.title} delay={0.08 + index * 0.06}>
+          {curatedPacks.map((pack, index) => (
+            <Reveal
+              key={pack.title}
+              className="h-full"
+              delay={0.08 + index * 0.06}
+            >
               <article
                 className={`group relative h-full min-h-[640px] overflow-hidden rounded-[28px] border border-blue-100 bg-white p-5 shadow-[0_22px_70px_rgba(15,23,42,0.09)] transition-all duration-300 hover:-translate-y-2.5 ${pack.borderHover} ${pack.shadowHover}`}
               >
@@ -177,9 +40,9 @@ export function PackSection() {
                   className={`pointer-events-none absolute left-1/2 top-28 h-40 w-64 -translate-x-1/2 rounded-full ${pack.glowClass} blur-3xl transition-opacity duration-300 group-hover:opacity-100`}
                 />
                 <div className="relative flex min-h-[600px] flex-col">
-                  <div className="relative h-[270px]">
+                  <div className="relative h-[290px]">
                     <div
-                      className={`absolute bottom-8 left-1/2 h-12 w-52 -translate-x-1/2 rounded-full ${pack.glowClass} blur-2xl`}
+                      className={`absolute bottom-7 left-1/2 h-14 w-56 -translate-x-1/2 rounded-full ${pack.glowClass} blur-2xl`}
                     />
                     {pack.products.map((product) => (
                       <div
@@ -244,7 +107,7 @@ export function PackSection() {
 
         <Reveal delay={0.22}>
           <div className="mt-10 grid gap-3 rounded-[28px] border border-blue-100 bg-white/72 p-3 shadow-[0_22px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
-            {trustItems.map((item) => {
+            {commerceTrustItems.map((item) => {
               const Icon = item.icon;
 
               return (

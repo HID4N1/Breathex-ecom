@@ -23,10 +23,10 @@ export default function Home() {
       <WhyBreathingSection />
       <ScienceSection />
       <BenefitsSection />
+      <StoriesSection />
       <ComparisonSection />
       <ProductSection />
       <PackSection />
-      <StoriesSection />
       <FaqSection />
       <OrderSection />
       <FinalCtaSection />

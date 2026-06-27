@@ -13,7 +13,7 @@ import { Reveal } from "@/components/reveal";
 const products = [
   {
     badge: "CLEAR",
-    title: "Invisible. Confortable. Chaque nuit.",
+    title: "Un Outil Invisible. Confortable. Chaque nuit.",
     description:
       "Conçu pour le sommeil, le ronflement et une respiration naturelle pendant toute la nuit.",
     cta: "Découvrir CLEAR",
@@ -32,7 +32,7 @@ const products = [
     chips: [
       { label: "Sommeil", icon: Moon },
       { label: "Anti-ronflement", icon: BedDouble },
-      { label: "Respiration naturelle", icon: Wind }
+      { label: "naturelle", icon: Wind }
     ]
   },
   {
@@ -74,8 +74,10 @@ export function ComparisonSection() {
             <p className="text-xs font-extrabold uppercase tracking-[4px] text-primary">
               CHOISISSEZ VOTRE STRIP
             </p>
-            <h2 className="mx-auto mt-6 max-w-[700px] text-[42px] font-extrabold leading-[0.96] tracking-normal text-navy sm:text-[56px] lg:text-[64px]">
-              Deux strips. Deux usages. Une respiration optimale.
+            <h2 className="mx-auto mt-6 max-w-[800px] text-[42px] font-extrabold leading-[0.96] tracking-normal text-navy sm:text-[56px] lg:text-[64px]">
+              Deux strips.
+              <br /> Deux usages. 
+              <br />Une respiration optimale.
             </h2>
             <p className="mx-auto mt-8 max-w-[700px] text-lg leading-[1.7] text-[#5A657A] sm:text-xl">
               Chaque version est conçue pour répondre à un besoin spécifique.

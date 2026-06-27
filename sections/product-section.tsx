@@ -1,96 +1,7 @@
 import Image from "next/image";
-import {
-  ArrowRight,
-  BadgeCheck,
-  CreditCard,
-  HelpCircle,
-  MessageCircle,
-  ShieldCheck,
-  Truck
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
-
-const collections = [
-  {
-    title: "CLEAR",
-    badge: "Invisible • Sommeil • Confort",
-    badgeClass: "from-[#2563EB] to-[#25D8FF]",
-    accent: "#25D8FF",
-    glowClass: "bg-[#25D8FF]/35",
-    borderHover: "hover:border-[#25D8FF]/55",
-    shadowHover: "hover:shadow-[0_28px_80px_rgba(37,216,255,0.18)]",
-    buttonClass:
-      "from-[#2563EB] to-[#25D8FF] shadow-[0_16px_42px_rgba(37,216,255,0.24)] hover:shadow-[0_20px_52px_rgba(37,216,255,0.38)]",
-    products: [
-      {
-        name: "CLEAR 26",
-        quantity: "26 bandes",
-        price: "159 DH",
-        description: "Découverte",
-        image: "/images/breathe-right-extra-strength-clear-26.jpg"
-      },
-      {
-        name: "CLEAR 30",
-        quantity: "30 bandes",
-        price: "179 DH",
-        description: "Routine mensuelle",
-        badge: "Le plus populaire",
-        image: "/images/breathe-right-clear-small-medium-30.jpg"
-      },
-      {
-        name: "CLEAR 44",
-        quantity: "44 bandes",
-        price: "219 DH",
-        description: "Stock confort",
-        label: "Meilleur rapport qualité/prix",
-        image: "/images/breathe-right-extra-strength-clear-44.jpg"
-      }
-    ]
-  },
-  {
-    title: "TAN",
-    badge: "Sport • Performance",
-    badgeClass: "from-[#FF5A3D] to-[#FF9B55]",
-    accent: "#FF7A45",
-    glowClass: "bg-[#FF7A45]/32",
-    borderHover: "hover:border-[#FF7A45]/55",
-    shadowHover: "hover:shadow-[0_28px_80px_rgba(255,122,69,0.16)]",
-    buttonClass:
-      "from-[#FF5A3D] to-[#FF9B55] shadow-[0_16px_42px_rgba(255,122,69,0.22)] hover:shadow-[0_20px_52px_rgba(255,122,69,0.34)]",
-    products: [
-      {
-        name: "TAN 26",
-        quantity: "26 bandes",
-        price: "159 DH",
-        description: "Découverte",
-        image: "/images/breathe-right-extra-strength-tan-26.jpg"
-      },
-      {
-        name: "TAN 30",
-        quantity: "30 bandes",
-        price: "179 DH",
-        description: "Routine sportive",
-        badge: "Le plus populaire",
-        image: "/images/breathe-right-tan-large-30.jpg"
-      },
-      {
-        name: "TAN 44",
-        quantity: "44 bandes",
-        price: "219 DH",
-        description: "Performance durable",
-        label: "Meilleur rapport qualité/prix",
-        image: "/images/breathe-right-extra-strength-tan-44.jpg"
-      }
-    ]
-  }
-];
-
-const trustItems = [
-  { label: "Livraison incluse", icon: Truck },
-  { label: "Paiement à la livraison", icon: CreditCard },
-  { label: "Produit officiel", icon: ShieldCheck },
-  { label: "Support WhatsApp", icon: MessageCircle }
-];
+import { productCollections } from "@/data/commerce";
 
 export function ProductSection() {
   return (
@@ -116,7 +27,7 @@ export function ProductSection() {
         </Reveal>
 
         <div className="mt-16 space-y-10">
-          {collections.map((collection, collectionIndex) => (
+          {productCollections.map((collection, collectionIndex) => (
             <Reveal key={collection.title} delay={0.1 + collectionIndex * 0.08}>
               <div className="relative rounded-[32px] border border-blue-100/80 bg-white/74 p-5 shadow-[0_28px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:p-7 lg:p-8">
                 <div

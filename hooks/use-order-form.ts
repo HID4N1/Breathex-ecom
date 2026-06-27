@@ -4,12 +4,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { packs } from "@/data/site";
+import { curatedPacks, productCollections } from "@/data/commerce";
 
 export const orderSchema = z.object({
-  product: z.enum(["clear", "tan"], {
-    required_error: "Choisissez une finition."
+  orderType: z.enum(["product", "pack"], {
+    required_error: "Choisissez produits ou packs."
   }),
+  productId: z.string().min(1, "Choisissez un produit."),
   packId: z.string().min(1, "Choisissez un pack."),
   quantity: z.coerce.number().min(1).max(10),
   fullName: z.string().min(3, "Entrez votre nom complet."),
@@ -23,13 +24,22 @@ export const orderSchema = z.object({
 
 export type OrderValues = z.infer<typeof orderSchema>;
 
+const productOptions = productCollections.flatMap((collection) =>
+  collection.products.map((product) => ({
+    ...product,
+    collection: collection.title,
+    accent: collection.accent
+  }))
+);
+
 export function useOrderForm() {
   const [submitted, setSubmitted] = useState(false);
   const form = useForm<OrderValues>({
     resolver: zodResolver(orderSchema),
     defaultValues: {
-      product: "clear",
-      packId: "duo",
+      orderType: "product",
+      productId: "clear-30",
+      packId: "pack-duo",
       quantity: 1,
       fullName: "",
       phone: "",
@@ -38,19 +48,29 @@ export function useOrderForm() {
     }
   });
 
+  const orderType = form.watch("orderType");
+  const selectedProductId = form.watch("productId");
   const selectedPackId = form.watch("packId");
   const quantity = form.watch("quantity");
-  const selectedPack = packs.find((pack) => pack.id === selectedPackId) ?? packs[1];
+
+  const selectedProduct =
+    productOptions.find((product) => product.id === selectedProductId) ??
+    productOptions[1];
+  const selectedPack =
+    curatedPacks.find((pack) => pack.id === selectedPackId) ?? curatedPacks[0];
+  const selectedItem = orderType === "pack" ? selectedPack : selectedProduct;
+
   const total = useMemo(
-    () => selectedPack.price * Number(quantity || 1),
-    [quantity, selectedPack.price]
+    () => selectedItem.priceValue * Number(quantity || 1),
+    [quantity, selectedItem.priceValue]
   );
 
   const onSubmit = form.handleSubmit(() => {
     setSubmitted(true);
     form.reset({
-      product: "clear",
-      packId: "duo",
+      orderType: "product",
+      productId: "clear-30",
+      packId: "pack-duo",
       quantity: 1,
       fullName: "",
       phone: "",
@@ -62,7 +82,11 @@ export function useOrderForm() {
   return {
     form,
     onSubmit,
+    productOptions,
+    packOptions: curatedPacks,
+    selectedProduct,
     selectedPack,
+    selectedItem,
     total,
     submitted,
     setSubmitted
