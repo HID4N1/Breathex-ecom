@@ -23,7 +23,7 @@ export function FinalCtaSection() {
               </p>
               <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-blue-50">
                 <a href="#order">
-                  Commander maintenant
+                  Ajouter au panier
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>

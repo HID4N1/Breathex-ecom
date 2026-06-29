@@ -112,7 +112,7 @@ export function ProductSection() {
                             href="#order"
                             className={`mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r ${collection.buttonClass} text-sm font-extrabold text-white transition duration-300 hover:brightness-110`}
                           >
-                            Commander
+                            Ajouter au panier
                             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                           </a>
                         </div>

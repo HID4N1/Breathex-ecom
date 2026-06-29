@@ -9,7 +9,7 @@ export function MobileStickyCta() {
       <Button asChild className="w-full">
         <a href="#order">
           <ShoppingBag className="h-4 w-4" />
-          Commander maintenant
+          Ajouter au panier
         </a>
       </Button>
     </div>

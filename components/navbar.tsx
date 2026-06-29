@@ -67,7 +67,7 @@ export function Navbar() {
               className="hidden h-10 px-5 text-sm shadow-none active:scale-95 sm:inline-flex"
             >
               <a href="#order">
-                Commander maintenant
+                Ajouter au panier
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>

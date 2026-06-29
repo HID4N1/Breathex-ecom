@@ -74,7 +74,7 @@ export function HeroSection() {
             href="#order"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2563EB] to-[#25D8FF] px-7 text-sm font-extrabold text-white shadow-[0_18px_42px_rgba(37,99,235,0.34)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_52px_rgba(37,216,255,0.34)]"
           >
-            Commander maintenant
+            Ajouter au panier
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
